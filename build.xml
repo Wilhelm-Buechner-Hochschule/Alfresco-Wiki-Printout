@@ -1,14 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="AlfrescoWikiPrintout" default="jar">
+<project name="AlfrescoWikiPrintout" default="amp">
     <description>
         An Alfresco Share extension that adds printout functionality to 
     	Alfresco's wiki.
     </description>
 
-    <target name="jar" description="Build the deployment jar">
-    	<mkdir dir="build/jar"/>
-        <jar destfile="build/jar/AlfrescoWikiPrintout.jar"
-            	basedir="src">
-        </jar>
+    <property name="build.dir" value="build"/>
+    <property name="dist.dir" value="dist"/>
+
+
+    <target name="module-jar" description="Creates the module JAR">
+        <mkdir dir="${build.dir}/lib" />
+        <jar destfile="${build.dir}/lib/AlfrescoWikiPrintout.jar"
+            basedir="source/java" />
     </target>
+
+    
+    <target name="amp"
+            description="Copies the files to the dist dir and creates the AMP"
+            depends="module-jar">
+       
+        <mkdir dir="${build.dir}" />
+        <copy file="source/java/alfresco/modules/wikiprintout/module.properties" todir="${build.dir}" />
+
+        <mkdir dir="${build.dir}/web/css" />
+        <copy todir="${build.dir}/web/css">
+            <fileset dir="source/web/css" />
+        </copy>
+
+        <zip zipfile="${dist.dir}/wikiprintout.amp" basedir="${build.dir}" />
+    </target>
+
+
+    <target name="clean">
+        <delete dir="${build.dir}" />
+        <delete dir="${dist.dir}" /> 
+    </target>
+
 </project>

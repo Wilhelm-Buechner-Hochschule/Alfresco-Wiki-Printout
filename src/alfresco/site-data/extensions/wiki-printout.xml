@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension>
+    <modules>
+        <module>
+            <id>Wiki Printout</id>
+            <description>Adds a print stylesheet to wiki pages</description>
+            <customizations>
+                <customization>
+                    <targetPackageRoot>org.alfresco</targetPackageRoot>
+                    <sourcePackageRoot>de.hfb.alfresco.wikiprintout</sourcePackageRoot>
+                </customization>
+            </customizations>
+        </module>
+    </modules>
+</extension>           

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="AlfrescoWikiPrintout" default="jar">
+    <description>
+        An Alfresco Share extension that adds printout functionality to 
+    	Alfresco's wiki.
+    </description>
+
+    <target name="jar" description="Build the deployment jar">
+    	<mkdir dir="build/jar"/>
+        <jar destfile="build/jar/AlfrescoWikiPrintout.jar"
+            	basedir="src">
+        </jar>
+    </target>
+</project>

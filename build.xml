@@ -5,6 +5,9 @@
     	Alfresco's wiki.
     </description>
 
+
+    <property name="project.version" value="1.0"/>
+
     <property name="build.dir" value="build"/>
     <property name="dist.dir" value="dist"/>
 
@@ -28,7 +31,7 @@
             <fileset dir="source/web/css" />
         </copy>
 
-        <zip zipfile="${dist.dir}/wikiprintout.amp" basedir="${build.dir}" />
+        <zip zipfile="${dist.dir}/wikiprintout-${project.version}.amp" basedir="${build.dir}" />
     </target>
 
 

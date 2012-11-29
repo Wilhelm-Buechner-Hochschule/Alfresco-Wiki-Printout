@@ -18,24 +18,25 @@
 
 body {
     font-family: Arial, helvetica, sans-serif;
-    font-size: 11pt;
-    
-    margin: 2.5cm;
+
+    border: 0;
+    margin: 0;
+    padding: 2.5em;
 }
 
 
 p {
-	font-size: 11pt;
+    font-size: 11pt;
 }
 
 
 li {
-	font-size: 11pt;
+    font-size: 11pt;
 }
 
 
 /* Hide the whole header: */
-#alf-hd {
+#alf-hd, #alf-hd * {
 	display: none;
 }
 
@@ -45,11 +46,26 @@ li {
 }
 
 
-.share-toolbar {
+.share-toolbar, .wiki-toolbar {
 	display: none;
 }
 
 
+/* Hide UI elements */
+
+#overlay,
+#lightbox,
+.yui-panel-container,
+.yui-dialog {
+    display: none;
+}
+
+div.title-bar > .align-right {
+	display: none;
+}
+
+
+/* Display the application logo with the title: */
 div.title-bar {
 	background-image: url("images/app-logo.png");
 	background-repeat: no-repeat;
@@ -59,10 +75,6 @@ div.title-bar {
 	margin-bottom: 1cm;
 }
 
-
-div.title-bar > .align-right {
-	display: none;
-}
 
 
 div.title-bar {
